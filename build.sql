@@ -12,3 +12,4 @@ create table master_plan(
 	description text	
 );
 
+\copy master_plan from 'data/master_plan.csv' with delimiter ',' header csv;
