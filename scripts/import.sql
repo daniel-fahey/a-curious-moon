@@ -12,5 +12,3 @@ create table import.master_plan(
 	title text,
 	description text	
 );
-
-\copy import.master_plan from 'data/master_plan.csv' with delimiter ',' header csv;
