@@ -1,5 +1,6 @@
-drop table if exists master_plan;
-create table master_plan(
+create schema if not exists import;
+drop table if exists import.master_plan;
+create table import.master_plan(
 	start_time_utc text,
 	duration text,
 	date text,
@@ -12,4 +13,4 @@ create table master_plan(
 	description text	
 );
 
-\copy master_plan from 'data/master_plan.csv' with delimiter ',' header csv;
+\copy import.master_plan from 'data/master_plan.csv' with delimiter ',' header csv;
