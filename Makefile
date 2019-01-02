@@ -1,4 +1,4 @@
-ZIP = http://archive.redfour.io/cassini/cassini_data.zip
+ZIP=http://archive.redfour.io/cassini/cassini_data.zip
 DB=enceladus
 BUILD=${CURDIR}/build.sql
 SCRIPTS=${CURDIR}/scripts
@@ -32,7 +32,6 @@ import: master data/master_plan.csv
 
 normalise: import
 	@cat $(NORMALISE) >> $(BUILD)
-
 
 clean:
 	@rm -rf $(BUILD)
