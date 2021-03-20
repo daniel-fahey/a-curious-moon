@@ -1,6 +1,6 @@
 create table if not exists import.master_plan (
-	start_time_utc text,
-	duration text,
+  start_time_utc text,
+  duration text,
   date text,
   team text,
   spass_type text,
