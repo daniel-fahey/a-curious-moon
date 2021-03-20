@@ -1,13 +1,14 @@
 ZIP = http://archive.redfour.io/cassini/cassini_data.zip
 DB = enceladus
 
-TABLES = master_plan
+IMPORT = master_plan
+TABLES = master_plan teams
 
-all : data
+all : load_data create_tables
 
 print-% : ; @echo $($*) | tr " " "\n"
 
-load_data : $(patsubst %, import/%, $(TABLES))
+load_data : $(patsubst %, import/%, $(IMPORT))
 create_tables : $(patsubst %, create_table_%, $(TABLES))
 
 define check_database
@@ -23,7 +24,7 @@ create_table_% : sql/tables/%.sql | sql_init
 drop_table_% :
 	psql $(DB) -c "drop table if exists $* cascade"
 
-import/master_plan : data/master_plan.csv create_table_master_plan
+import/master_plan : data/master_plan.csv | create_table_master_plan
 	@mkdir -p import
 	cat $< | psql $(DB) -c \
 	"\copy import.master_plan from STDIN with delimiter ',' header csv;" \
