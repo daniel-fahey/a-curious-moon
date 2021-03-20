@@ -1,0 +1,12 @@
+create table if not exists import.master_plan (
+	start_time_utc text,
+	duration text,
+  date text,
+  team text,
+  spass_type text,
+  target text,
+  request_name text,
+  library_definition text,
+  title text,
+  description text
+);
