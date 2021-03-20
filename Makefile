@@ -7,7 +7,7 @@ cassini_data.zip :
 
 data : cassini_data.zip
 	unzip cassini_data.zip curious_data/data/*
-	find . -name '.DS_Store' -type f -delete
 	mv curious_data/data data
 	rm -rf curious_data
-	sed -i 's//\n/g' data/master_plan.csv
+	find data -name '.DS_Store' -type f -delete
+	find data -type f -print0 | xargs -0 mac2unix
