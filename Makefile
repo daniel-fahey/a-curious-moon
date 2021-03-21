@@ -2,7 +2,7 @@ ZIP = http://archive.redfour.io/cassini/cassini_data.zip
 DB = enceladus
 
 IMPORT = master_plan
-TABLES = master_plan teams
+TABLES = master_plan dims fact
 
 all : load_data create_tables
 
