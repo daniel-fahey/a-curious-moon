@@ -11,10 +11,6 @@ print-% : ; @echo $($*) | tr " " "\n"
 load_data : $(patsubst %, import/%, $(IMPORT))
 create_tables : $(patsubst %, create_table_%, $(TABLES))
 
-define check_database
-	psql $(PG_DB_URI) -c "select 1;" > /dev/null 2>&1 ||
-endef
-
 sql_% : sql/%.sql
 	psql $(DB) -f $<
 
