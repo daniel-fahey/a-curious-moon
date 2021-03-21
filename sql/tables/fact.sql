@@ -21,7 +21,7 @@ insert into events(
   spass_type_id
 )
 select
-  import.master_plan.start_time_utc::timestamptz,
+  import.master_plan.start_time_utc::timestamp without time zone at time zone 'UTC',
   import.master_plan.title,
   import.master_plan.description,
   event_types.id,
