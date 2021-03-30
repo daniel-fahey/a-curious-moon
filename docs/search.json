@@ -6,14 +6,14 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-03-30T23:17:09+01:00"
+      "last_modified": "2021-03-30T23:51:48+01:00"
     },
     {
       "path": "index.html",
       "title": "A Curious Moon",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-03-30T23:17:10+01:00"
+      "last_modified": "2021-03-30T23:51:49+01:00"
     }
   ],
   "collections": ["posts/posts.json"]
