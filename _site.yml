@@ -3,10 +3,13 @@ title: "A Curious Moon"
 description: |
   A Curious Moon
 output_dir: "docs"
+exclude: ["Makefile", "renv.lock", "sql"]
+repository_url: https://github.com/dan-fahey/a-curious-moon
 navbar:
   right:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
+  source_url: true
 output: distill::distill_article
